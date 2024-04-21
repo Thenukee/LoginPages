@@ -13,7 +13,7 @@ public class LoginPage implements ActionListener{
 	JLabel userIDLabel = new JLabel("userID:");
 	JLabel userPasswordLabel = new JLabel("password:");
 	JLabel messageLabel = new JLabel();
-	HashMap<String,String> logininfo = new HashMap<String,String>();
+	private HashMap<String,String> logininfo = new HashMap<String,String>();
 	
 	LoginPage(HashMap<String,String> loginInfoOriginal){
 		
