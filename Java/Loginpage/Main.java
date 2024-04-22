@@ -10,7 +10,7 @@ import Java.SerializerAndDeserializer.User;
 public class Main {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
-		///* This will not run as we already pre-install the userPassword.ser
+		/* This will not run as we already pre-install the userPassword.ser
 		//Serializing
 		IDandPasswords idandPasswords = new IDandPasswords(); 
 		
@@ -21,17 +21,21 @@ public class Main {
         fileOut.close();
 
         System.out.println("Object info saved!!");
-		//*/
+		*/
 
 		//deserialization
-	/* 
+	
 		IDandPasswords idandPasswords = null;
 		FileInputStream fileIn=new FileInputStream("userPassword.ser");
         ObjectInputStream in=new ObjectInputStream(fileIn);
         idandPasswords=(IDandPasswords)in.readObject();
         in.close();
         fileIn.close();
-		idandPasswords.newUser("asdasbaba", "Nasdasd234");
+		//testing
+		//idandPasswords.newUser("asdasbaba", "Nasdasd234");
+		//MakeIDandPassword newUser= new MakeIDandPassword();
+		//newUser.createUserAccount("Amhiiia","Wasnna","StrongPass123",idandPasswords);
+
 		
 		// serialization
 		FileOutputStream fileOut=new FileOutputStream("userPassword.ser");
@@ -40,10 +44,11 @@ public class Main {
         out.close();
         fileOut.close();
 
+
         System.out.println("Object info saved!!");
 
 		
-		*/		
+				
 		LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo());
 
 
