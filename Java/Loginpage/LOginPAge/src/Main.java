@@ -24,7 +24,7 @@ public class Main {
 		//deserialization
 	
 		IDandPasswords idandPasswords = null;
-		FileInputStream fileIn=new FileInputStream("userPassword.ser");
+		FileInputStream fileIn = new FileInputStream("src/userPassword.ser");
         ObjectInputStream in=new ObjectInputStream(fileIn);
         idandPasswords=(IDandPasswords)in.readObject();
         in.close();
