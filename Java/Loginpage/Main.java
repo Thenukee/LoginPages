@@ -3,9 +3,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
-import Java.SerializerAndDeserializer.User;
 
 public class Main {
 
@@ -43,11 +41,7 @@ public class Main {
         out.writeObject(idandPasswords);
         out.close();
         fileOut.close();
-
-
-        System.out.println("Object info saved!!");
-
-		
+		System.out.println("Object info saved!!");
 				
 		LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo());
 
@@ -57,4 +51,3 @@ public class Main {
 
 	
 }
-//**************************************************
