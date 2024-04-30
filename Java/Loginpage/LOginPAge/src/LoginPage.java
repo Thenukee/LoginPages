@@ -61,8 +61,11 @@ public class LoginPage implements ActionListener{
 		if(e.getSource()==loginButton) {
 			
 			String userID = userIDField.getText();
-			String password = String.valueOf(userPasswordField.getPassword());
+			String password = String.valueOf(userPasswordField.getPassword());//get the hashed password
 			
+
+
+			/* serialized object
 			if(logininfo.containsKey(userID)) {
 				if(logininfo.get(userID).equals(password)) {
 					messageLabel.setForeground(Color.green);
@@ -74,12 +77,28 @@ public class LoginPage implements ActionListener{
 					messageLabel.setForeground(Color.red);
 					messageLabel.setText("Wrong password");
 				}
+				
 
 			}
 			else {
 				messageLabel.setForeground(Color.red);
 				messageLabel.setText("username not found");
 			}
+			*/
+
+			//database
+			if(SQLite.userAuthentication(userID, password)) {
+				messageLabel.setForeground(Color.green);
+				messageLabel.setText("Login successful");
+				frame.dispose();
+				WelcomePage welcomePage = new WelcomePage(userID);
+			}
+			else {
+				messageLabel.setForeground(Color.red);
+				messageLabel.setText("Incorrect username or password");
+			}
+
+
 		}
 	}	
 }
